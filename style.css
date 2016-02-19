@@ -1,0 +1,19 @@
+.container-fluid{
+	padding-top: 3%;
+	padding-bottom: 3%;
+	padding-left: 4% !important;
+	padding-right: 4% !important;
+}
+select{
+	width: 70%;
+}
+body {
+	background: url('bg.png');
+        font-size: 12px;
+        font-family:"Meiryo","Comic Sans MS","Courier New", Courier, monospace !important;
+    }
+
+#intro{
+	font-size: 18px;
+	font-weight: 10;
+}
