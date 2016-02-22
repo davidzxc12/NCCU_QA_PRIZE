@@ -10,6 +10,7 @@ function handleFileSelect(event) {
         	$("#list").append($('<option id=\"'+(i+1)+'\">'+textarray[i]+'</option>'))
         	total=total+1;
         }
+        console.log(total)
 
     }
     reader.readAsText(files[0]);
@@ -47,11 +48,13 @@ $(document).ready(function() {
     document.getElementById('exampleInputFile').addEventListener('change', handleFileSelect, false);
     document.getElementById("num").defaultValue = "1";
     $("#submit").click(function() {
+    	$('#lucky_list option').remove();
         var num = $("#num").val();
         var rdmArray = getRandomArray(1, total, num);
         for (var i = 0; i < rdmArray.length; i++) {
             console.log('#list #' + rdmArray[i]);
             $('#list #' + rdmArray[i]).clone().appendTo('#lucky_list');
+            $('#list #' + rdmArray[i]).remove();
         }
     });
     $('#one').click(function () {
