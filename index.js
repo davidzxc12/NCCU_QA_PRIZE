@@ -37,9 +37,9 @@ function getRandomArray(minNum, maxNum, n) { //隨機產生不重覆的n個數�
             //檢查亂數是否存在於陣列中，若存在則繼續回圈
             if (rdmArray.indexOf(rdm) != -1)
                 exist = true;
-            if(!$('#list option#'+rdm).exists()){
-            	exist=true;
-            	console.log('exist!')
+            if (!$('#list option#' + rdm).exists()) {
+                exist = true;
+                console.log('exist!')
             }
 
 
@@ -61,19 +61,18 @@ $(document).ready(function() {
     document.getElementById('exampleInputFile').addEventListener('change', handleFileSelect, false);
     document.getElementById("num").defaultValue = "1";
     $("#submit").click(function() {
-        $('#lucky_list'+flag+' option').remove();
+        $('#lucky_list' + flag + ' option').remove();
         var num = $("#num").val();
         var rdmArray = getRandomArray(1, total, num);
         for (var i = 0; i < rdmArray.length; i++) {
-     //       console.log('#list #' + rdmArray[i]);
+            //       console.log('#list #' + rdmArray[i]);
             $('#list #' + rdmArray[i]).clone().appendTo('#lucky_list' + flag);
             $('#list #' + rdmArray[i]).remove();
         }
-        if(num>6){
-        	$('#lucky_list'+flag).attr("size",num);
-        }
-        else
-        	$('#lucky_list'+flag).attr("size",6);
+        if (num > 6) {
+            $('#lucky_list' + flag).attr("size", num);
+        } else
+            $('#lucky_list' + flag).attr("size", 6);
     });
     $('#one').click(function() {
         $('#photo').attr('src', '1.jpg');
@@ -84,22 +83,29 @@ $(document).ready(function() {
     })
     $('#two').click(function() {
         $('#photo').attr('src', '2.jpg');
-        $('#intro').text("TCELL 冠元-USB3.0 128GB Hide & Seek ");
+        $('#intro').text("SanDisk Ultra Dual OTG 雙傳輸 USB 3.0 隨身碟 128GB");
         flag = 2;
         $('.lucky_list').hide();
         $('.lucky' + flag).show();
     })
     $('#three').click(function() {
         $('#photo').attr('src', '3.jpg');
-        $('#intro').text("ASUS Zenpower行動電源");
+        $('#intro').text("金士頓 DataTraveler 100 G3 64GB USB3.0 隨身碟");
         flag = 3;
         $('.lucky_list').hide();
         $('.lucky' + flag).show();
     })
     $('#four').click(function() {
-        $('#photo').attr('src', '4.gif');
-        $('#intro').text("7-11商品卡200元");
+        $('#photo').attr('src', '4.jpg');
+        $('#intro').text("ASUS Zenpower行動電源");
         flag = 4;
+        $('.lucky_list').hide();
+        $('.lucky' + flag).show();
+    })
+    $('#five').click(function() {
+        $('#photo').attr('src', '5.gif');
+        $('#intro').text("7-11商品卡200元");
+        flag = 5;
         $('.lucky_list').hide();
         $('.lucky' + flag).show();
     })
